@@ -47,8 +47,11 @@ re-downloaded in order to locate PACKAGE."
 (require-package 'monokai-theme)
 (load-theme 'monokai t)
 
-(require 'whitespace)
-(global-whitespace-mode 1)
+;(require 'whitespace)
+;(global-whitespace-mode 1)
+
+(require-package 'magit)
+(require 'magit)
 
 (require-package 'evil-leader)
 (global-evil-leader-mode)
@@ -58,7 +61,8 @@ re-downloaded in order to locate PACKAGE."
   "b" 'switch-to-buffer
   "k" 'kill-buffer
   "w" 'save-buffer
-  "g" 'vc-next-action)
+  "g" 'vc-next-action
+  "p" 'magit-push)
 
 ;;;;CONFIGS
 ; set python to use tabs instead of spaces
