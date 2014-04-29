@@ -48,6 +48,7 @@ re-downloaded in order to locate PACKAGE."
 (load-theme 'monokai t)
 
 (require 'whitespace)
+(global-whitespace-mode 1)
 
 ;;;;CONFIGS
 ; set python to use tabs instead of spaces
