@@ -63,6 +63,7 @@ re-downloaded in order to locate PACKAGE."
   "w" 'save-buffer
   "gg" 'vc-next-action
   "gp" 'magit-push
+  "gu" 'magit-pull
   "gs" 'magit-status)
 
 ;;;;CONFIGS
