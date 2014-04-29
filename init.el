@@ -41,8 +41,10 @@ re-downloaded in order to locate PACKAGE."
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize)
 
+(require-package 'git-gutter)
 (global-git-gutter-mode +1)
 
+(require-package 'monokai-theme)
 (load-theme 'monokai t)
 
 (require 'whitespace-mode)
