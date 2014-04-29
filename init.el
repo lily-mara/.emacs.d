@@ -62,7 +62,8 @@ re-downloaded in order to locate PACKAGE."
   "k" 'kill-buffer
   "w" 'save-buffer
   "g" 'vc-next-action
-  "p" 'magit-push)
+  "p" 'magit-push
+  "s" 'magit-status)
 
 ;;;;CONFIGS
 ; set python to use tabs instead of spaces
