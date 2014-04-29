@@ -56,3 +56,5 @@ re-downloaded in order to locate PACKAGE."
     (setq indent-tabs-mode t)
     (setq python-indent 8)
     (setq tab-width 4)))
+
+(setq inhibit-startup-message t)
