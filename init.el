@@ -50,6 +50,16 @@ re-downloaded in order to locate PACKAGE."
 (require 'whitespace)
 (global-whitespace-mode 1)
 
+(require-package 'evil-leader)
+(global-evil-leader-mode)
+(evil-leader/set-leader "<SPC>")
+(evil-leader/set-key
+  "e" 'find-file
+  "b" 'switch-to-buffer
+  "k" 'kill-buffer
+  "w" 'save-buffer
+  "g" 'vc-next-action)
+
 ;;;;CONFIGS
 ; set python to use tabs instead of spaces
 (add-hook 'python-mode-hook
