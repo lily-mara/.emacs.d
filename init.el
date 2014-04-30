@@ -67,7 +67,8 @@ re-downloaded in order to locate PACKAGE."
   "gg" 'vc-next-action
   "gp" 'magit-push
   "gu" 'magit-pull
-  "gs" 'magit-status)
+  "gs" 'magit-status
+  "SPC" 'evil-visual-line)
 
 ;;;;CONFIGS
 ; set python to use tabs instead of spaces
