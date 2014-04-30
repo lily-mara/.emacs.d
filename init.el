@@ -53,6 +53,9 @@ re-downloaded in order to locate PACKAGE."
 (require-package 'magit)
 (require 'magit)
 
+(require 'tramp)
+(setq tramp-default-method "ssh")
+
 (require-package 'evil-leader)
 (global-evil-leader-mode)
 (evil-leader/set-leader "<SPC>")
@@ -75,3 +78,5 @@ re-downloaded in order to locate PACKAGE."
     (setq tab-width 4)))
 
 (setq inhibit-startup-message t)
+
+(blink-cursor-mode 0)
