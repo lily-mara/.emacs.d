@@ -36,8 +36,6 @@ re-downloaded in order to locate PACKAGE."
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/plugins/evil-org-mode"))
 
-(add-to-list 'load-path "~/.emacs.d/plugins/evil-org-mode")
-
 (require 'org)
 (require 'evil-org)
 
