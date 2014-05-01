@@ -97,3 +97,12 @@ re-downloaded in order to locate PACKAGE."
   version-control t)
 
 (show-paren-mode 1)
+(custom-set-variables
+ '(magit-use-overlays nil)
+ '(org-agenda-files (quote ("~/org/school.org") ("~/org/IEEE.org"))))
+
+(custom-set-faces)
+
+(setq org-directory "~/org/")
+(setq org-mobile-directory "~/Dropbox/mobileorg")
+(setq org-mobile-inbox-for-pull "~/Dropbox/mobileorg/from-phone.org")
