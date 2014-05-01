@@ -106,3 +106,7 @@ re-downloaded in order to locate PACKAGE."
 (setq org-directory "~/org/")
 (setq org-mobile-directory "~/Dropbox/mobileorg")
 (setq org-mobile-inbox-for-pull "~/Dropbox/mobileorg/from-phone.org")
+
+(add-hook 'org-mode-hook (lambda () (evil-leader/set-key 
+				      "op" 'org-mobile-push
+				      "ou" 'org-mobile-pull)))
