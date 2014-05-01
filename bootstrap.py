@@ -1,9 +1,14 @@
+#!/usr/bin/env python3
+
 import subprocess
 import os
 
 plugins = [
 		'edwtjo/evil-org-mode'
 ]
+
+def main():
+	clone_all_plugins()
 
 def full_url(url):
 		url_beginnings = ['http', 'git://', 'ssh://', 'https://']
@@ -18,15 +23,17 @@ def full_url(url):
 
 		return github + '/' + url
 		
-def clone_all_plugins(plugins):
+def clone_all_plugins():
 		home = os.path.expanduser('~')
 		plugins_dir = os.path.join(home, '.emacs.d', 'plugins')
-		if not os.path.ispath(plugins_dir):
+		if not os.path.exists(plugins_dir):
 				os.mkdir(plugins_dir)
 
 		for plugin in plugins:
 				plugin_name = plugin.split('/')[-1:][0]
-				clone_path = plugins_dir + plugin_name
+				clone_path = os.path.join(plugins_dir, plugin_name)
 				command = ['git', 'clone', full_url(plugin), clone_path]
 				subprocess.call(command)
-				print('Cloning {0}'.format(plugin_name))
+
+if __name__ == '__main__':
+	main()
