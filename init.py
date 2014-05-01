@@ -2,7 +2,8 @@ import subprocess
 import os
 
 plugins = [
-		'edwtjo/evil-org-mode'
+		'edwtjo/evil-org-mode',
+		'technomancy/package.el'
 ]
 
 def full_url(url):
