@@ -1,5 +1,9 @@
 ;;;; Evil mode
 ;;;;;;;; Bootstrapper
+(if (>= emacs-major-version 24)
+    (message "")
+  (load "~/.emacs.d/oldemacs.el"))
+
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
