@@ -39,6 +39,9 @@ re-downloaded in order to locate PACKAGE."
 ;;;;PACKAGES
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/plugins/evil-org-mode"))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/plugins/ahk-mode"))
+
+(require 'ahk-mode)
 
 (require 'org)
 (require 'evil-org)
@@ -100,9 +103,19 @@ re-downloaded in order to locate PACKAGE."
 
 (show-paren-mode 1)
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ahk-syntax-directory "~/.emacs.d/plugins/ahk-mode/")
  '(magit-use-overlays nil))
 
-(custom-set-faces)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
 
 (setq org-agenda-files '("~/org"))
 (setq org-directory "~/org/")
