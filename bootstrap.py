@@ -5,7 +5,8 @@ import os
 
 plugins = [
 		'edwtjo/evil-org-mode',
-		'technomancy/package.el'
+		'technomancy/package.el',
+		'natemara/ahk-mode'
 ]
 
 def main():
