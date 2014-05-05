@@ -79,6 +79,11 @@ re-downloaded in order to locate PACKAGE."
   "gs" 'magit-status
   "SPC" 'evil-visual-line)
 
+(require-package 'markdown-mode)
+
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
+
 ;;;;CONFIGS
 ; set python to use tabs instead of spaces
 (add-hook 'python-mode-hook
