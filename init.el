@@ -88,12 +88,11 @@ re-downloaded in order to locate PACKAGE."
 (setq jedi:complete-on-dot t)
 
 ;;;;CONFIGS
-; set python to use tabs instead of spaces
-(add-hook 'python-mode-hook
-  (lambda ()
-    (setq indent-tabs-mode t)
-    (setq python-indent 4)
-    (setq tab-width 4)))
+; use tabs instead of spaces
+
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq indent-line-function 'insert-tab)
 
 (setq inhibit-startup-message t)
 
