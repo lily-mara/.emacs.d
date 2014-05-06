@@ -80,7 +80,8 @@ re-downloaded in order to locate PACKAGE."
   "gp" 'magit-push
   "gu" 'magit-pull
   "gs" 'magit-status
-  "SPC" 'evil-visual-line)
+  "SPC" 'evil-visual-line
+  "m" 'compile)
 
 (require-package 'markdown-mode)
 
