@@ -91,8 +91,8 @@ re-downloaded in order to locate PACKAGE."
 ;;;;CONFIGS
 ; use tabs instead of spaces
 
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
+(setq indent-tabs-mode nil)
+(setq tab-width 4)
 (setq indent-line-function 'insert-tab)
 
 (setq inhibit-startup-message t)
