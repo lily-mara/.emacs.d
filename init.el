@@ -38,13 +38,18 @@ re-downloaded in order to locate PACKAGE."
 
 ;;;;PACKAGES
 
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/plugins/evil-org-mode"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/plugins/ahk-mode"))
+(let ((default-directory "~/.emacs.d/plugins/"))
+  (normal-top-level-add-subdirs-to-load-path))
 
 (require 'ahk-mode)
 
 (require 'org)
 (require 'evil-org)
+(require 'surround)
+(global-surround-mode 1)
+
+(require-package 'evil-nerd-commenter)
+(require 'evil-nerd-commenter)
 
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
@@ -81,7 +86,13 @@ re-downloaded in order to locate PACKAGE."
   "gu" 'magit-pull
   "gs" 'magit-status
   "SPC" 'evil-visual-line
-  "m" 'compile)
+  "m" 'compile
+  "ci" 'evilnc-comment-or-uncomment-lines
+  "cl" 'evilnc-comment-or-uncomment-to-the-line
+  "cc" 'evilnc-copy-and-comment-lines
+  "cp" 'evilnc-comment-or-uncomment-paragraphs
+  "cr" 'comment-or-uncomment-region
+)
 
 (require-package 'markdown-mode)
 
@@ -91,9 +102,16 @@ re-downloaded in order to locate PACKAGE."
 ;;;;CONFIGS
 ; use tabs instead of spaces
 
-(setq indent-tabs-mode nil)
-(setq tab-width 4)
-(setq indent-line-function 'insert-tab)
+(defun indent-defaults ()
+  (setq indent-tabs-mode t)
+  (setq tab-width 4)
+  (setq indent-line-function 'insert-tab))
+
+(add-hook 'python-mode-hook 'indent-defaults)
+(add-hook 'java-mode-hook 'indent-defaults)
+(add-hook 'c++-mode-hook 'indent-defaults)
+(add-hook 'c-mode-hook 'indent-defaults)
+(add-hook 'shell-mode-hook 'indent-defaults)
 
 (setq inhibit-startup-message t)
 
