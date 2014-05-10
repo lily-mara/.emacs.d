@@ -48,11 +48,8 @@ re-downloaded in order to locate PACKAGE."
 (require 'surround)
 (global-surround-mode 1)
 
-(require-package 'evil-nerd-commenter)
 (require 'evil-nerd-commenter)
 
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (when (< emacs-major-version 24)
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
