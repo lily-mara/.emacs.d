@@ -102,15 +102,16 @@ re-downloaded in order to locate PACKAGE."
 ;;;;CONFIGS
 ; use tabs instead of spaces
 
-(setq indent-tabs-mode t)
-(setq tab-width 4)
-(setq indent-line-function 'insert-tab)
-
-(add-hook 'python-mode-hook
-  (lambda ()
+(defun indent-defaults ()
     (setq indent-tabs-mode t)
-    (setq python-indent 4)
-    (setq tab-width 4)))
+    (setq tab-width 4)
+    (setq indent-line-function 'insert-tab))
+
+(add-hook 'python-mode-hook 'indent-defaults)
+(add-hook 'java-mode-hook 'indent-defaults)
+(add-hook 'c++-mode-hook 'indent-defaults)
+(add-hook 'c-mode-hook 'indent-defaults)
+(add-hook 'shell-mode-hook 'indent-defaults)
 
 (setq inhibit-startup-message t)
 
