@@ -109,6 +109,7 @@ re-downloaded in order to locate PACKAGE."
 (add-hook 'c++-mode-hook 'indent-defaults)
 (add-hook 'c-mode-hook 'indent-defaults)
 (add-hook 'shell-mode-hook 'indent-defaults)
+(add-hook 'sh-mode-hook 'indent-defaults)
 
 (setq inhibit-startup-message t)
 
