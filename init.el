@@ -38,13 +38,15 @@ re-downloaded in order to locate PACKAGE."
 
 ;;;;PACKAGES
 
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/plugins/evil-org-mode"))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/plugins/ahk-mode"))
+(let ((default-directory "~/.emacs.d/plugins/"))
+  (normal-top-level-add-subdirs-to-load-path))
 
 (require 'ahk-mode)
 
 (require 'org)
 (require 'evil-org)
+(require 'surround)
+(global-surround-mode 1)
 
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
