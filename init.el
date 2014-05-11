@@ -90,6 +90,7 @@ re-downloaded in order to locate PACKAGE."
   "cc" 'evilnc-copy-and-comment-lines
   "cp" 'evilnc-comment-or-uncomment-paragraphs
   "cr" 'comment-or-uncomment-region
+  "sp" 'ispell-buffer
 )
 
 (require-package 'markdown-mode)
