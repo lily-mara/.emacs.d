@@ -26,6 +26,7 @@ re-downloaded in order to locate PACKAGE."
 (require-package 'evil)
 
 ;;;;;;;; Configuration
+(setq-default ispell-program-name "aspell")
 (setq evil-search-module 'evil-search
       evil-want-C-u-scroll t
       evil-want-C-w-in-emacs-state t)
