@@ -2,21 +2,21 @@
     (message "")
   (load "~/.emacs.d/oldemacs.el"))
 
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-
-(add-to-list 'load-path "functions.el")
-(package-initialize)
-
-(add-to-list 'load-path "packages.el")
-(add-to-list 'load-path "evil-config.el")
-
-
-(setq-default ispell-program-name "aspell")
-
 (let ((default-directory "~/.emacs.d/plugins/"))
   (normal-top-level-add-subdirs-to-load-path))
 
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+(load "~/.emacs.d/functions.el")
+(package-initialize)
+
+(load "~/.emacs.d/packages.el")
+(load "~/.emacs.d/evil-config.el")
+
+
+(setq-default ispell-program-name "aspell")
 
 (global-surround-mode 1)
 

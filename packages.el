@@ -8,7 +8,6 @@
 (require-package 'jedi)
 
 ;INITIALIZE
-(require 'package)
 (require 'evil)
 (require 'ahk-mode)
 (require 'org)
