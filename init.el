@@ -1,105 +1,30 @@
-;;;; Evil mode
-;;;;;;;; Bootstrapper
 (if (>= emacs-major-version 24)
     (message "")
   (load "~/.emacs.d/oldemacs.el"))
 
-(require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
-;;; from purcell/emacs.d
-(defun require-package (package &optional min-version no-refresh)
-  "Install given PACKAGE, optionally requiring MIN-VERSION.
-If NO-REFRESH is non-nil, the available package lists will not be
-re-downloaded in order to locate PACKAGE."
-  (if (package-installed-p package min-version)
-      t
-    (if (or (assoc package package-archive-contents) no-refresh)
-        (package-install package)
-      (progn
-        (package-refresh-contents)
-        (require-package package min-version t)))))
-
+(add-to-list 'load-path "functions.el")
 (package-initialize)
 
-(require-package 'evil)
+(add-to-list 'load-path "packages.el")
+(add-to-list 'load-path "evil-config.el")
 
-;;;;;;;; Configuration
+
 (setq-default ispell-program-name "aspell")
-(setq evil-search-module 'evil-search
-      evil-want-C-u-scroll t
-      evil-want-C-w-in-emacs-state t)
-
-(require 'evil)
-(evil-mode t)
-
-(define-key evil-insert-state-map "\C-c" 'evil-normal-state)
-(define-key evil-visual-state-map "\C-c" 'evil-normal-state)
-
-;;;;PACKAGES
 
 (let ((default-directory "~/.emacs.d/plugins/"))
   (normal-top-level-add-subdirs-to-load-path))
 
-(require 'ahk-mode)
 
-(require 'org)
-(require 'evil-org)
-(require 'surround)
 (global-surround-mode 1)
 
-(require 'ido)
 (ido-mode t)
 
-(require 'evil-nerd-commenter)
 
 (when (< emacs-major-version 24)
-  ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
-(package-initialize)
-
-(require-package 'git-gutter)
-(global-git-gutter-mode +1)
-
-(require-package 'monokai-theme)
-(load-theme 'monokai t)
-
-;(require 'whitespace)
-;(global-whitespace-mode 1)
-
-(require-package 'magit)
-(require 'magit)
-
-(require 'tramp)
-(setq tramp-default-method "ssh")
-
-(require-package 'evil-leader)
-(global-evil-leader-mode)
-(evil-leader/set-leader "<SPC>")
-(evil-leader/set-key
-  "e" 'find-file
-  "b" 'switch-to-buffer
-  "k" 'kill-buffer
-  "w" 'save-buffer
-  "gg" 'vc-next-action
-  "gp" 'magit-push
-  "gu" 'magit-pull
-  "gs" 'magit-status
-  "SPC" 'evil-visual-line
-  "m" 'compile
-  "ci" 'evilnc-comment-or-uncomment-lines
-  "cl" 'evilnc-comment-or-uncomment-to-the-line
-  "cc" 'evilnc-copy-and-comment-lines
-  "cp" 'evilnc-comment-or-uncomment-paragraphs
-  "cr" 'comment-or-uncomment-region
-  "sp" 'ispell-buffer
-)
-
-(require-package 'markdown-mode)
-
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
 
 ;;;;CONFIGS
 ; use tabs instead of spaces
