@@ -9,6 +9,7 @@
 
 ;INITIALIZE
 (require 'evil)
+(require 'evil-leader)
 (require 'ahk-mode)
 (require 'org)
 (require 'evil-org)
