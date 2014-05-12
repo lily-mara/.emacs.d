@@ -49,6 +49,9 @@ re-downloaded in order to locate PACKAGE."
 (require 'surround)
 (global-surround-mode 1)
 
+(require 'ido)
+(ido-mode t)
+
 (require 'evil-nerd-commenter)
 
 (when (< emacs-major-version 24)
