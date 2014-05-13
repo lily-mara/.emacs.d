@@ -8,7 +8,8 @@ plugins = [
 	'technomancy/package.el',
 	'natemara/ahk-mode',
 	'timcharper/evil-surround',
-	'bookest/arduino-mode'
+	'bookest/arduino-mode',
+	'redguardtoo/evil-nerd-commenter'
 ]
 
 def main():
