@@ -18,6 +18,7 @@
 (require 'evil-nerd-commenter)
 (require 'tramp)
 (require 'magit)
+(require 'arduino-mode)
 
 ;CONFIGS
 (global-git-gutter-mode +1)
