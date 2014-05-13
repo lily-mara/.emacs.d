@@ -7,7 +7,8 @@ plugins = [
 	'edwtjo/evil-org-mode',
 	'technomancy/package.el',
 	'natemara/ahk-mode',
-	'timcharper/evil-surround'
+	'timcharper/evil-surround',
+	'bookest/arduino-mode'
 ]
 
 def main():
