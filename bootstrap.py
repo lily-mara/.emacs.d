@@ -37,8 +37,9 @@ def clone_all_plugins():
 	for plugin in plugins:
 		plugin_name = plugin.split('/')[-1:][0]
 		clone_path = os.path.join(plugins_dir, plugin_name)
-		command = ['git', 'clone', full_url(plugin), clone_path]
-		subprocess.call(command)
+		if not os.path.exists(clone_path):
+			command = ['git', 'clone', full_url(plugin), clone_path]
+			subprocess.call(command)
 
 if __name__ == '__main__':
 	main()
