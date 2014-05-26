@@ -9,7 +9,8 @@ plugins = [
 	'natemara/ahk-mode',
 	'timcharper/evil-surround',
 	'bookest/arduino-mode',
-	'redguardtoo/evil-nerd-commenter'
+	'redguardtoo/evil-nerd-commenter',
+	'jinzhu/zeal-at-point'
 ]
 
 def main():

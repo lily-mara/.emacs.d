@@ -19,6 +19,7 @@
 (require 'tramp)
 (require 'magit)
 (require 'arduino-mode)
+(require 'zeal-at-point)
 
 ;CONFIGS
 (global-git-gutter-mode +1)
