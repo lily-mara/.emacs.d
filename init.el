@@ -28,7 +28,7 @@
 (defun indent-defaults ()
   (setq indent-tabs-mode t)
   (setq tab-width 4)
-  (setq indent-line-function 'insert-tab))
+  )
 
 (add-hook 'python-mode-hook 'indent-defaults)
 (add-hook 'java-mode-hook 'indent-defaults)
