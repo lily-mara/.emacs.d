@@ -55,7 +55,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ahk-syntax-directory "~/.emacs.d/plugins/ahk-mode/")
- '(magit-use-overlays nil))
+ '(magit-use-overlays nil)
+ '(tab-width 4))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
