@@ -26,5 +26,6 @@
   "cp" 'evilnc-comment-or-uncomment-paragraphs
   "cr" 'comment-or-uncomment-region
   "sp" 'ispell-buffer
+  "i" 'whitespace-mode
 )
 (define-key evil-motion-state-map "," 'evil-repeat-find-char-reverse)
