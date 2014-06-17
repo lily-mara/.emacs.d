@@ -27,5 +27,6 @@
   "cr" 'comment-or-uncomment-region
   "sp" 'ispell-buffer
   "i" 'whitespace-mode
+  "f" 'auto-fill-mode
 )
 (define-key evil-motion-state-map "," 'evil-repeat-find-char-reverse)
