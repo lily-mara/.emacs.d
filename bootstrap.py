@@ -5,13 +5,7 @@ import os
 
 plugins = [
 	'edwtjo/evil-org-mode',
-	'technomancy/package.el',
-	'natemara/ahk-mode',
-	'timcharper/evil-surround',
-	'bookest/arduino-mode',
-	'redguardtoo/evil-nerd-commenter',
-	'jinzhu/zeal-at-point',
-        'flycheck/flycheck'
+	'natemara/ahk-mode'
 ]
 
 def main():

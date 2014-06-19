@@ -2,12 +2,11 @@
     (message "")
   (load "~/.emacs.d/oldemacs.el"))
 
+(require 'cask "~/.cask/cask.el")
+(cask-initialize)
+
 (let ((default-directory "~/.emacs.d/plugins/"))
   (normal-top-level-add-subdirs-to-load-path))
-
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 (load "~/.emacs.d/functions.el")
 (package-initialize)
@@ -15,10 +14,9 @@
 (load "~/.emacs.d/packages.el")
 (load "~/.emacs.d/evil-config.el")
 
-
 (setq-default ispell-program-name "aspell")
 
-(global-surround-mode 1)
+(global-evil-surround-mode 1)
 
 (ido-mode t)
 
@@ -45,7 +43,8 @@
  ;; If there is more than one, they won't work right.
  '(ahk-syntax-directory "~/.emacs.d/plugins/ahk-mode/")
  '(magit-use-overlays nil)
- '(tab-width 4))
+ '(tab-width 4)
+ '(indent-tabs-mode t))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
