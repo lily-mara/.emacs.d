@@ -10,7 +10,8 @@ plugins = [
 	'timcharper/evil-surround',
 	'bookest/arduino-mode',
 	'redguardtoo/evil-nerd-commenter',
-	'jinzhu/zeal-at-point'
+	'jinzhu/zeal-at-point',
+        'flycheck/flycheck'
 ]
 
 def main():
