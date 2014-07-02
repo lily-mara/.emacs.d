@@ -22,7 +22,18 @@
 
 ;;;;CONFIGS
 ; use tabs instead of spaces
-(global-set-key (kbd "TAB") 'self-insert-command)
+
+(defun indent-defaults ()
+  (setq indent-tabs-mode t)
+  (setq tab-width 4)
+  )
+
+(add-hook 'python-mode-hook 'indent-defaults)
+(add-hook 'java-mode-hook 'indent-defaults)
+(add-hook 'c++-mode-hook 'indent-defaults)
+(add-hook 'c-mode-hook 'indent-defaults)
+(add-hook 'shell-mode-hook 'indent-defaults)
+(add-hook 'sh-mode-hook 'indent-defaults)
 
 (setq inhibit-startup-message t)
 
