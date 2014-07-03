@@ -1,1 +1,9 @@
 elpa
+.cask
+.org-id-locations
+.python-environments
+ac-comphist.dat
+auto-save-list
+plugins
+tramp
+xinit.el

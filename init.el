@@ -2,12 +2,11 @@
     (message "")
   (load "~/.emacs.d/oldemacs.el"))
 
+(require 'cask "~/.cask/cask.el")
+(cask-initialize)
+
 (let ((default-directory "~/.emacs.d/plugins/"))
   (normal-top-level-add-subdirs-to-load-path))
-
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 (load "~/.emacs.d/functions.el")
 (package-initialize)
@@ -15,10 +14,9 @@
 (load "~/.emacs.d/packages.el")
 (load "~/.emacs.d/evil-config.el")
 
-
 (setq-default ispell-program-name "aspell")
 
-(global-surround-mode 1)
+(global-evil-surround-mode 1)
 
 (ido-mode t)
 
@@ -28,7 +26,7 @@
 (defun indent-defaults ()
   (setq indent-tabs-mode t)
   (setq tab-width 4)
-  (setq indent-line-function 'insert-tab))
+  )
 
 (add-hook 'python-mode-hook 'indent-defaults)
 (add-hook 'java-mode-hook 'indent-defaults)
@@ -36,6 +34,7 @@
 (add-hook 'c-mode-hook 'indent-defaults)
 (add-hook 'shell-mode-hook 'indent-defaults)
 (add-hook 'sh-mode-hook 'indent-defaults)
+(global-set-key (kbd "TAB") 'self-insert-command)
 
 (setq inhibit-startup-message t)
 
@@ -55,7 +54,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(ahk-syntax-directory "~/.emacs.d/plugins/ahk-mode/")
- '(magit-use-overlays nil))
+ '(magit-use-overlays nil)
+ '(tab-width 4)
+ '(indent-tabs-mode t))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

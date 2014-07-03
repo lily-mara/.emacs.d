@@ -26,6 +26,8 @@
   "cp" 'evilnc-comment-or-uncomment-paragraphs
   "cr" 'comment-or-uncomment-region
   "sp" 'ispell-buffer
+  "i" 'whitespace-mode
+  "f" 'auto-fill-mode
 )
 
 (defun run-python-file ()
