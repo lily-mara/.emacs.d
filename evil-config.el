@@ -27,4 +27,11 @@
   "cr" 'comment-or-uncomment-region
   "sp" 'ispell-buffer
 )
+
+(defun run-python-file ()
+    (call-process (concat "python3" buffer-file-name)))
+
+(add-hook 'python-mode-hook (lambda () (evil-leader/set-key 
+				      "r" 'run-python-file)))
+
 (define-key evil-motion-state-map "," 'evil-repeat-find-char-reverse)
