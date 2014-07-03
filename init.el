@@ -35,6 +35,16 @@
 
 (setq inhibit-startup-message t)
 
+(set-mode-for-filename-patterns 
+  'ruby-mode
+  '("\\.rb$"
+    "\\.rsel$"
+    "\\.rhtml$"
+    "\\.erb$" 
+    "\\.prawn$"
+    "Rakefile$"
+    "Gemfile$"))
+
 (blink-cursor-mode 0)
 
 (setq backup-directory-alist `(("." . "~/.saves")))
