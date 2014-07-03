@@ -18,7 +18,7 @@
   '(evil git-gutter monokai-theme magit markdown-mode evil-leader jedi evil-surround arduino-mode evil-nerd-commenter zeal-at-point))
 
 (dolist (p tmtxt/packages)
-  (lambda () 
+  (lambda ()
 	  (when (not (package-installed-p p))
 		(package-install p))
 	  (require p)))
