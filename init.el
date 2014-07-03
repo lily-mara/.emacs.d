@@ -35,6 +35,14 @@
 
 (setq inhibit-startup-message t)
 
+(defun set-mode-for-filename-patterns (mode filename-pattern-list)
+  (mapcar
+    (lambda (filename-pattern)
+      (setq 
+        auto-mode-alist 
+        (cons (cons filename-pattern mode) auto-mode-alist)))
+    filename-pattern-list))
+
 (set-mode-for-filename-patterns 
   'ruby-mode
   '("\\.rb$"
