@@ -2,9 +2,6 @@
     (message "")
   (load "~/.emacs.d/oldemacs.el"))
 
-(require 'cask "~/.cask/cask.el")
-(cask-initialize)
-
 (let ((default-directory "~/.emacs.d/plugins/"))
   (normal-top-level-add-subdirs-to-load-path))
 

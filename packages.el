@@ -1,19 +1,33 @@
-(require 'arduino-mode)
-(require 'evil)
-(require 'evil-leader)
-(require 'evil-nerd-commenter)
+;;; Emacs is not a package manager, and here we load its package manager!
+(require 'package)
+(dolist (source '(("marmalade" . "http://marmalade-repo.org/packages/")
+                  ("elpa" . "http://tromey.com/elpa/")
+                  ;; TODO: Maybe, use this after emacs24 is released
+                  ;; (development versions of packages)
+                  ("melpa" . "http://melpa.milkbox.net/packages/")
+                  ))
+  (add-to-list 'package-archives source t))
+(package-initialize)
+
+;;; Required packages
+;;; everytime emacs starts, it will automatically check if those packages are
+;;; missing, it will install them automatically
+(when (not package-archive-contents)
+  (package-refresh-contents))
+(defvar tmtxt/packages
+  '(evil git-gutter monokai-theme magit markdown-mode evil-leader jedi evil-surround arduino-mode evil-nerd-commenter zeal-at-point))
+
+(dolist (p tmtxt/packages)
+  (lambda () 
+	  (when (not (package-installed-p p))
+		(package-install p))
+	  (require p)))
+
+
 (require 'evil-org)
-(require 'flycheck)
-(require 'git-gutter)
 (require 'ido)
-(require 'jedi)
-(require 'magit)
-(require 'markdown-mode)
-(require 'monokai-theme)
 (require 'org)
-(require 'evil-surround)
 (require 'tramp)
-(require 'zeal-at-point)
 
 ;CONFIGS
 (global-git-gutter-mode +1)
