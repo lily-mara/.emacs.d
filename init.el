@@ -31,9 +31,13 @@
 (add-hook 'c-mode-hook 'indent-defaults)
 (add-hook 'shell-mode-hook 'indent-defaults)
 (add-hook 'sh-mode-hook 'indent-defaults)
+
 (global-set-key (kbd "TAB") 'self-insert-command)
 
 (setq inhibit-startup-message t)
+
+(add-hook 'haskell-mode-hook 'haskell-indent-mode)
+(add-hook 'haskell-mode-hook 'interactive-haskell-mode)
 
 (defun set-mode-for-filename-patterns (mode filename-pattern-list)
   (mapcar
