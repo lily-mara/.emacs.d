@@ -15,7 +15,7 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 (defvar tmtxt/packages
-  '(evil git-gutter monokai-theme magit markdown-mode evil-leader jedi evil-surround arduino-mode evil-nerd-commenter zeal-at-point haskell-mode))
+  '(evil git-gutter monokai-theme magit markdown-mode evil-leader jedi evil-surround arduino-mode evil-nerd-commenter zeal-at-point haskell-mode auto-complete-clang-async))
 
 (dolist (p tmtxt/packages)
 	  (when (not (package-installed-p p))
