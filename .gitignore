@@ -7,3 +7,4 @@ auto-save-list
 plugins
 tramp
 xinit.el
+clang-complete
