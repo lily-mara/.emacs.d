@@ -1,1 +1,1 @@
-(load "~/.emacs.d/plugin/package.el/package.el")
+(load "~/.emacs.d/plugins/package.el/package.el")
