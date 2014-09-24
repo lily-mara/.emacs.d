@@ -18,6 +18,7 @@
   "gp" 'magit-push
   "gu" 'magit-pull
   "gs" 'magit-status
+  "gr" 'magit-refresh
   "SPC" 'evil-visual-line
   "m" 'compile
   "ci" 'evilnc-comment-or-uncomment-lines
