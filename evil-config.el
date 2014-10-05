@@ -29,6 +29,8 @@
   "sp" 'ispell-buffer
   "i" 'whitespace-mode
   "f" 'auto-fill-mode
+  "n" 'next-error
+  "p" 'previous-error
 )
 
 (defun run-python-file ()
