@@ -40,3 +40,23 @@
 				      "r" 'run-python-file)))
 
 (define-key evil-motion-state-map "," 'evil-repeat-find-char-reverse)
+
+; courtesy of Gordon Gustafson on StackOverflow
+; originally posted 2014-03-15
+; http://stackoverflow.com/questions/18102004/emacs-evil-mode-how-to-create-a-new-text-object-to-select-words-with-any-non-sp
+ 
+(defmacro define-and-bind-text-object (key start-regex end-regex)
+(let ((inner-name (make-symbol "inner-name"))
+(outer-name (make-symbol "outer-name")))
+`(progn
+(evil-define-text-object ,inner-name (count &optional beg end type)
+(evil-regexp-range count beg end type ,start-regex ,end-regex t))
+(evil-define-text-object ,outer-name (count &optional beg end type)
+(evil-regexp-range count beg end type ,start-regex ,end-regex nil))
+(define-key evil-inner-text-objects-map ,key (quote ,inner-name))
+(define-key evil-outer-text-objects-map ,key (quote ,outer-name)))))
+ 
+;;; Useage:
+ 
+; between dollars sign:
+(define-and-bind-text-object "$" "\\$" "\\$")
