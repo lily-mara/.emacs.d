@@ -11,7 +11,7 @@ Install
 ```bash
 $ git clone https://github.com/natemara/.emacs.d ~/.emacs.d
 $ cd ~/.emacs.d
-$ python init.py
+$ python boostrap.py
 $ emacs -nw
 $ emacs
 ```
