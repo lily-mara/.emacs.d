@@ -34,4 +34,5 @@
 (setq tramp-default-method "ssh")
 
 (add-hook 'python-mode-hook 'jedi:setup)
+(add-to-list 'ac-sources 'ac-source-jedi-direct)
 (setq jedi:complete-on-dot t)
