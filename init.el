@@ -39,6 +39,8 @@
 (add-hook 'haskell-mode-hook 'haskell-indent-mode)
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
 
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 (defun set-mode-for-filename-patterns (mode filename-pattern-list)
   (mapcar
     (lambda (filename-pattern)
